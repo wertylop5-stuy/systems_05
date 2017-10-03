@@ -4,6 +4,7 @@
 int my_strlen(char *s);
 char* my_strcpy(char *dest, char *src);
 char* my_strncat(char *dest, char *src, int n);
+char* my_strcat(char *dest, char *src);
 
 int main() {
 	char c[20] = "";
@@ -94,3 +95,18 @@ char* my_strncat(char *dest, char *src, int n) {
 	
 	return dest;
 }
+
+
+/*
+same as above, but using all of src by default
+*/
+char* my_strcat(char *dest, char *src) {
+	//we want to use the whole string, so count the length
+	char *temp = src;
+	while(*(temp++));
+	
+	//minus 1 cuz we did temp++ (overshot by one)
+	return my_strncat(dest, src, temp - src - 1);
+}
+
+
