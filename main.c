@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include"include/linS.h"
+#include"include/liK.h"
 
 int main() {
 	char c[20] = "";
