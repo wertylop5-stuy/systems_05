@@ -4,27 +4,15 @@
 #include"include/liK.h"
 
 int main() {
-	char c[20] = "";
-	char d[] = "abcdefg";
-	
-	printf("testing my_strncat\n");
-	
-	char a[] = "apple";
+	char a[100] = "apple";
+	char aa[100] = "apple";
 	char b[] = "banana";
-	printf("my_strncat(a, b, 2): %s\n", my_strncat(a, b, 2));
+	char c[] = "12345";
+	char d[] = "abcdefg";
+	char h[100] = "";
 	
-	char aa[] = "apple";
-	char bb[] = "banana";
-	printf("strncat(a, b, 2): %s\n", strncat(aa, bb, 2));
+	printf("a: %s\naa: %s\nb: %s\nc: %s\nd: %s\nh: %s\n", a, aa, b, c, d, h);
 	
-	printf("\ntesting my_strlen\n");
-	printf("my_strlen(b): %d\n", my_strlen(bb));
-	printf("strlen(b): %lu\n", strlen(bb));
-	
-	printf("my_strlen(\"\"): %d\n", my_strlen(""));
-	printf("strlen(\"\"): %lu\n", strlen(""));
-	
-	char h[100];
 	printf("\ntesting my_strcpy\n");
 	printf("my_strcpy(h, \"\"): %s\n", my_strcpy(h, ""));
 	printf("strcpy(h, \"\"): %s\n", strcpy(h, ""));
@@ -34,6 +22,67 @@ int main() {
 	
 	printf("my_strcpy(h, b): %s\n", my_strcpy(h, b));
 	printf("strcpy(h, b): %s\n", strcpy(h, b));
+	
+	
+	
+	printf("\ntesting my_strncat\n");
+	printf("my_strncat(a, b, 2): %s\n", my_strncat(a, b, 2));
+	printf("strncat(aa, b, 2): %s\n", strncat(aa, b, 2));
+	
+	//reset array
+	printf("resetting array\n");
+	my_strcpy(a, "apple");
+	my_strcpy(aa, "apple");
+	printf("my_strncat(a, b, 4): %s\n", my_strncat(a, b, 4));
+	printf("strncat(aa, b, 4): %s\n", strncat(aa, b, 4));
+	
+	//test without reset
+	printf("my_strncat(a, b, 3): %s\n", my_strncat(a, b, 3));
+	printf("strncat(aa, b, 3): %s\n", strncat(aa, b, 3));
+	
+	printf("resetting array\n");
+	my_strcpy(a, "apple");
+	my_strcpy(aa, "apple");
+	printf("strncat(a, b, 0): %s\n", strncat(a, b, 0));
+	printf("strncat(aa, b, 0): %s\n", strncat(aa, b, 0));
+	
+	printf("resetting array\n");
+	my_strcpy(a, "apple");
+	my_strcpy(aa, "apple");
+	printf("strncat(a, b, 100): %s\n", strncat(a, b, 100));
+	printf("strncat(aa, b, 100): %s\n", strncat(aa, b, 100));
+	
+	printf("resetting array\n");
+	my_strcpy(a, "apple");
+	my_strcpy(aa, "apple");
+	printf("\ntesting my_strcat\n");
+	printf("my_strcat(a, b): %s\n", my_strcat(a, b));
+	printf("strcat(aa, b): %s\n", strcat(aa, b));
+	
+	//reset array
+	printf("resetting array\n");
+	my_strcpy(a, "apple");
+	my_strcpy(aa, "apple");
+	printf("my_strcat(a, c): %s\n", my_strcat(a, c));
+	printf("strcat(aa, c): %s\n", strcat(aa, c));
+	
+	
+	//reset array
+	printf("resetting array\n");
+	my_strcpy(a, "apple");
+	my_strcpy(aa, "apple");
+	printf("my_strcat(a, \"\"): %s\n", my_strcat(a, ""));
+	printf("strcat(aa, \"\"): %s\n", strcat(aa, ""));
+	
+	
+	printf("\ntesting my_strlen\n");
+	printf("my_strlen(b): %d\n", my_strlen(b));
+	printf("strlen(b): %lu\n", strlen(b));
+	
+	printf("my_strlen(\"\"): %d\n", my_strlen(""));
+	printf("strlen(\"\"): %lu\n", strlen(""));
+	
+	
 	
 	printf("----------TESTING CMPTHESTRS----------\n");
   char string1[] = "banana";
